@@ -1,5 +1,6 @@
 package kh.spring.service;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kh.spring.dao.BoardDAO;
+
 import kh.spring.dto.BoardDTO;
 
 @Service
@@ -18,6 +20,14 @@ public class BoardService {
 	public BoardDTO viewBoardDetail(int seq){
 		
 		return bdao.viewBoardDetail(seq);
+	}
+
+	public int WriteBoardInsert(String writer, String title, String contents) {
+		return bdao.WriteBoardInsert(writer, title, contents);
+	}
+
+	public int writeCmt(String writer, String contents) {
+		return bdao.writeCmt(writer,contents);
 	}
 
 }

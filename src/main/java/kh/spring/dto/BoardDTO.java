@@ -2,25 +2,13 @@ package kh.spring.dto;
 
 import java.sql.Date;
 
+
 public class BoardDTO {
 	private int seq;
-	private String Writer;
+	private String writer;
 	private String title;
 	private String contents;
 	private Date write_date;
-	
-	public BoardDTO(int seq, String writer, String title, String contents, Date write_date) {
-		super();
-		this.seq = seq;
-		Writer = writer;
-		this.title = title;
-		this.contents = contents;
-		this.write_date = write_date;
-	}
-	public BoardDTO() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 	public int getSeq() {
 		return seq;
 	}
@@ -28,10 +16,10 @@ public class BoardDTO {
 		this.seq = seq;
 	}
 	public String getWriter() {
-		return Writer;
+		return writer;
 	}
 	public void setWriter(String writer) {
-		Writer = writer;
+		this.writer = writer;
 	}
 	public String getTitle() {
 		return title;
@@ -51,7 +39,18 @@ public class BoardDTO {
 	public void setWrite_date(Date write_date) {
 		this.write_date = write_date;
 	}
+	public BoardDTO(int seq, String writer, String title, String contents, Date write_date) {
+		super();
+		this.seq = seq;
+		this.writer = writer;
+		this.title = title;
+		this.contents = contents;
+		this.write_date = write_date;
+	}
+	public BoardDTO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	
 	
-
 }
