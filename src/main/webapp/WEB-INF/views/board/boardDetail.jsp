@@ -18,6 +18,7 @@
         textarea{width: 100%; height: 100%;}
         .cmtContentsWrapper{width: 90%; height: 60px; float:left; }
         .cmtBtnWrapper{width: 10%;  height: 60px; float:left; }
+        
         #cmtBtn{width: 100%; height:100%;}
          .commentsWrapper{width: 800px; height: 160px;}
             .contents{width: 100%; height: 100px;}
@@ -34,24 +35,24 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <body>
 	<div class="mainContentsWrapper">
-		<form>
-			<div class="title" name="title">${dto.title }</div>
-			<div class="writer" name="writer">${dto.writer }</div>
-			<div class="reg_date" name="write_date">${dto.write_date }</div>
+		<form action="/board/modifyBoard" method="post">
+			<div class="title" name="title"><input type="text" name="title" value="${dto.title }" readonly></div>
+			<div class="writer" name="writer"><input type="text" name="writer" value="${dto.writer }" readonly></div>
+			<div class="reg_date" name="write_date"><input type="text" name="write_date" value="${dto.write_date }" readonly></div>
 			<div class="contents">
-				<textarea style="resize: none;" id="textarea" name="textarea"
+				<textarea style="resize: none;" id="textarea" name="contents"
 					readonly>${dto.contents }</textarea>
 			</div>
 			<c:choose>
 				<c:when test="${dto.writer == loginId }">
 					<div class="btnWrapper">
-						<input type="button" value="수정"> <input type="submit"
-							value="삭제">
+						<input type="hidden" id="seq" name="seq" value="${dto.seq }"><input type="submit" id="modify" value="수정"> <input type="button"
+							id="delBtn" value="삭제"> <input type="button"  id="backBtn" value="전체목록으로">
 					</div>
 				</c:when>
 				<c:otherwise>
 					<div class="btnWrapper">
-						<input type="button" value="목록으로">
+						<input type="button" id="backBtn" value="전체목록으로">
 					</div>
 				</c:otherwise>
 			</c:choose>
@@ -86,4 +87,19 @@
 	</script>
 
 </body>
+<script>
+$(document).on('click','#delBtn', function(){
+	let result = confirm("삭제하시겠습니까?");
+	if(result){
+		let seq = $('#seq').val();
+		location.href="/board/deleteBoard?seq="+seq+"";
+	}else{
+	}
+	
+	});
+	
+$(document).on('click','#backBtn',function(){
+	location.href="/board/showBoard.brd?cpage=1";
+})
+</script>
 </html>
