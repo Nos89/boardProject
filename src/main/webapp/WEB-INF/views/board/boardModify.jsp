@@ -81,8 +81,9 @@
 	<script>
 
         //목록으로
+        // 수정 : 목록 대신 해당 글 보기로 이동
         document.getElementById("toIndex").onclick = function(){
-        	location.href='/';
+        	location.href='/board/boardDetail?seq=${dto.seq}';
         }
         </script>
 

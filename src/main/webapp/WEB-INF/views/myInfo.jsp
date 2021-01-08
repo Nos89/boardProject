@@ -19,6 +19,10 @@
 		border: 1px solid black;
 		margin: auto;
 	}
+	
+	.myInfoTitle{
+		background: #4CC627;
+	}
 	.btnWrapper{
 		width: 400px;
 		padding-top: 10px;
@@ -32,6 +36,9 @@
 		<c:choose>
 			<c:when test="${flag == 'false'}">
 				<table class="myInfo">
+					<tr>
+						<th colspan=2 class="myInfoTitle">내 정보</th>
+					</tr>
 					<tr>
 						<td>아이디
 						<td>${myInfo.id}
@@ -66,6 +73,9 @@
 				<form action="/member/modify" method="post">
 					<table class="myInfo">
 						<tr>
+							<th colspan=2 class="myInfoTitle">내 정보 수정
+						</tr>
+						<tr>
 							<td>아이디
 							<td>${myInfo.id}
 						</tr>
@@ -83,8 +93,8 @@
 						</tr>
 					</table>
 					<div class="btnWrapper">
-						<input type="submit" value="수정하기"></button>
-						<button class="btnBack">뒤로 가기</button>
+						<input type="submit" value="수정하기">
+						<button type="button" class="btnBack">뒤로 가기</button>
 					</div>
 				</form>
 				<script>
@@ -99,17 +109,18 @@
 						}
 					})
 					$(".btnBack").click(function(){
-						location.href="/member/myInfo?type=false";
+						location.href="/member/myInfo";
 					})
 				</script>
 			</c:when>
 		</c:choose>		
 	</div>
 	<c:if test="${result != null && result == 'true' }">
-				<script>
-					alert("회원 정보가 변경 되셨습니다.");
-					location.href="/";
-				</script>
-				</c:if>
+	<script>
+		alert("${result}")
+		alert("회원 정보가 변경 되셨습니다.");
+		location.href="/";
+	</script>
+	</c:if>
 </body>
 </html>

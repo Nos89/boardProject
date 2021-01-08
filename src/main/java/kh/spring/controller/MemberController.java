@@ -42,7 +42,10 @@ public class MemberController {
 		}
 		return "home";
 	}
-
+	
+	// 회원 정보
+	// type == true : 정보 수정 페이지로
+	// type == false : 정보 보기 페이지로
 	@RequestMapping("myInfo")
 	public String myInfo(String type, Model model) {
 		String id = (String) session.getAttribute("loginID");
@@ -59,11 +62,13 @@ public class MemberController {
 		}
 		return "/myInfo";
 	}
-
+	
+	// 회원 정보 수정 로직
 	@RequestMapping("modify")
 	public String modifyInfo(MemberDTO dto, Model model) {
 		dto.setId((String) session.getAttribute("loginID"));
 		int result = mservice.modifyInfo(dto);
+		System.out.println(result);
 		if (result > 0) {
 			model.addAttribute("result", true);
 		} else {
