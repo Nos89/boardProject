@@ -112,7 +112,8 @@
 	</script>
 
 <a href="/board/toWrite">글쓰기</a>
-<a href="/board/toCommet">댓글</a>
+<a href="/board/toCommet">댓글쓰기</a>
+<a href="/board/cmtView">댓글확인</a>
 
 </body>
 </html>
