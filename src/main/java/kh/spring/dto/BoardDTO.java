@@ -1,6 +1,8 @@
 package kh.spring.dto;
 
-import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 public class BoardDTO {
 	private int seq;
@@ -8,6 +10,16 @@ public class BoardDTO {
 	private String title;
 	private String contents;
 	private Date write_date;
+	
+	public BoardDTO() {}
+	public BoardDTO(int seq, String writer, String title, String contents, Date write_date) {
+		super();
+		this.seq = seq;
+		this.writer = writer;
+		this.title = title;
+		this.contents = contents;
+		this.write_date = write_date;
+	}
 	public int getSeq() {
 		return seq;
 	}
@@ -38,18 +50,9 @@ public class BoardDTO {
 	public void setWrite_date(Date write_date) {
 		this.write_date = write_date;
 	}
-	public BoardDTO(int seq, String writer, String title, String contents, Date write_date) {
-		super();
-		this.seq = seq;
-		this.writer = writer;
-		this.title = title;
-		this.contents = contents;
-		this.write_date = write_date;
+	public String getFormedDate() {
+		SimpleDateFormat sdf = new SimpleDateFormat("yy년MM월dd일");
+		return sdf.format(write_date.getTime());
 	}
-	public BoardDTO() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
-	
+
 }

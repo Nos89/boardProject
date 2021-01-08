@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,10 +11,6 @@
              *{box-sizing: border-box;}
             div{border: 1px solid black;}
             .container{width: 800px; height: 160px;}
-            .container2{width: 800px; height: 160px; margin-top:100px;}
-            .top{height: 60px;}
-            .seq{float: left; width: 100px; height: 100%;}
-            .id{float: left; width: 200px; height: 100%;}
             .contents{width: 100%; height: 100px;}
             .apply{ height: 60px;}
             .applyBtn{float: right; height: 100%; width: 100px;}
@@ -31,13 +28,7 @@
      </form>
      
        
-<!-- 댓글들 확인 -->
-        <div class="container2">
-            <div class="top">
-                <div class="seq">seq</div> <div class="id">id</div>
-            </div>
-            <div class="contents">contents</div>
-        
-        </div>
+
+      
 </body>
 </html>

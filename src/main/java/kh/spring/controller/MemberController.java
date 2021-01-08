@@ -1,5 +1,6 @@
 package kh.spring.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,13 +14,18 @@ import kh.spring.service.MemberService;
 @Controller
 @RequestMapping("/member")
 public class MemberController {
-
+	
 	@Autowired
 	HttpSession session;
 	
 	@Autowired
 	MemberService mservice;
 	
+	@RequestMapping("logout.mem")
+	public String logout(HttpServletRequest request) throws Exception {
+		request.getSession().invalidate();
+		return "home";
+	}
 	
 	@RequestMapping("login")
 	public String login(String id, String pw, Model model) {

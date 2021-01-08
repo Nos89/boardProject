@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+ <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <meta charset="UTF-8">
 <title>Home</title>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -111,9 +112,20 @@
 		</c:when>
 	</c:choose>
 	</div>
+	
+	<script>
+		$(document).on('click','.btnBoard',function(){
+			location.href="/board/showBoard.brd?cpage=1";
+		});
+		
+		$(document).on('click','.btnLogout',function(){
+			location.href = "/member/logout.mem";
+		});
+	</script>
 
 <a href="/board/toWrite">글쓰기</a>
-<a href="/board/toCommet">댓글</a>
+<a href="/board/toCommet">댓글쓰기</a>
+<a href="/board/cmtView">댓글확인</a>
 
 </body>
 </html>
