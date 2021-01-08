@@ -82,7 +82,7 @@
 
         //목록으로
         document.getElementById("toIndex").onclick = function(){
-        	location.href='home';
+        	location.href='/';
         }
         </script>
 

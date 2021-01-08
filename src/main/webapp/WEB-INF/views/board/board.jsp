@@ -156,6 +156,13 @@ a {
 	$(document).on('click','.nav_item', function(){
 		$(this).css({ background:"#065471" , color:"#ffc045" });
 		});
+	
+	$(document).on('click','#write', function(){
+		location.href="/board/toWrite";
+		});
+	$(document).on('click','#back', function(){
+		location.href="/";
+		});
 	</script>
 </body>
 </html>
