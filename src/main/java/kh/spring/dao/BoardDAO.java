@@ -1,11 +1,14 @@
 package kh.spring.dao;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import kh.spring.dto.CommentDTO;
 
 @Component
 public class BoardDAO {
@@ -28,6 +31,10 @@ public class BoardDAO {
 		param.put("contents",contents);
 		
 		return db.insert("Board.writeCmt", param);
+	}
+
+	public List<CommentDTO> cmtList(int board_seq) {
+		return db.selectList("Board.cmtList", board_seq);
 	}
 
 }

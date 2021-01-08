@@ -1,5 +1,7 @@
 package kh.spring.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import kh.spring.dto.CommentDTO;
 import kh.spring.service.BoardService;
 
 @Controller
@@ -65,5 +68,18 @@ public class BoardController {
 		}
 		return null;
 	}
+	
+	@RequestMapping("cmtView")
+	public String cmtView(Model model) {
+		
+		int board_seq =11;
+		
+		List<CommentDTO> list = bservice.cmtList(board_seq);
+		model.addAttribute("cmtList", list);
+		model.addAttribute("aaa", 1111111);
+		return "/board/cmtView";		
+	}
+	
+	
 
 }
