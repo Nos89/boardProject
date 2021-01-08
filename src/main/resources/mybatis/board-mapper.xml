@@ -18,13 +18,13 @@
 	
 	<!-- 댓글 등록 -->
 	<insert id="writeCmt">
-		insert into git_comment values(git_comment_seq.nextval,11,#{writer},#{contents},sysdate)
+		insert into git_comment values(git_comment_seq.nextval,#{board_seq},#{writer},#{contents},sysdate)
 	</insert>
 	
 	<!-- 댓글 나열 -->
 	<select id="cmtList" resultType="kh.spring.dto.CommentDTO">
 		select * from git_comment where board_seq=#{value} order by cmt_date desc
-		</select>
+	</select>
 		
 	<!-- 게시글 상세보기 -->
 	<select id="viewBoardDetail" resultType="kh.spring.dto.BoardDTO">

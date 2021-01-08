@@ -40,8 +40,8 @@ public class BoardService {
 		return bdao.WriteBoardInsert(writer, title, contents);
 	}
 
-	public int writeCmt(String writer, String contents) {
-		return bdao.writeCmt(writer,contents);
+	public int writeCmt(int board_seq,String writer, String contents) {
+		return bdao.writeCmt(board_seq,writer,contents);
 	}
 
 
