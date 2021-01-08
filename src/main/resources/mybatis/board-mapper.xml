@@ -2,4 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Board">
 	<!-- git_board -->
+	<select id="viewBoardDetail" resultType="kh.spring.dto.BoardDTO">
+	  select * from git_board where seq=#{value}
+	</select>
 </mapper>
