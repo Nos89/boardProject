@@ -33,6 +33,7 @@ public class BoardController {
 		int amount = bservice.listBoard().size();
 		List<BoardDTO> list = bservice.listByCpage(cpage);
 		String navi = bservice.getNavi(cpage, amount);
+		session.setAttribute("amount", amount);
 		session.setAttribute("cpage", cpage);
 		session.setAttribute("list", list);
 		session.setAttribute("navi", navi);

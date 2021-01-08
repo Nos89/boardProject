@@ -96,14 +96,14 @@ public class BoardService {
 
 		StringBuilder sb = new StringBuilder();
 		if(needPrev) {
-			sb.append("<a class='nav_item' href='/board/showBoard.brd?cpage="+(startNavi-1)+"'>< </a>");
+			sb.append("<a class='nav_item2' href='/board/showBoard.brd?cpage="+(startNavi-1)+"'>< </a>");
 		}
 		for(int i = startNavi; i<=endNavi; i++) {
 			sb.append("<a class='nav_item' href='/board/showBoard.brd?cpage="+i+"'>"+ i + " </a> ");
 		}
 
 		if(needNext) {
-			sb.append("<a class='nav_item' href='/board/showBoard.brd?cpage="+(endNavi+1)+"'> ></a>");
+			sb.append("<a class='nav_item2' href='/board/showBoard.brd?cpage="+(endNavi+1)+"'> ></a>");
 		}
 
 		return sb.toString();
