@@ -94,12 +94,11 @@
 			</div>
 		</c:when>
 		<c:when test="${loginID != null }">
-				<button id=board>게시판</button>
 				<button id=logout>로그아웃</button>
 		</c:when>
 	</c:choose>
 	</div>
-
+<button id=board>게시판</button>
 	
 	<script>
 		$(document).on('click','#board',function(){

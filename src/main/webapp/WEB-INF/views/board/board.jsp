@@ -96,6 +96,14 @@ div {
 	text-align: center;
 }
 
+.done{
+		color: #6f7180;
+	background-color: #149ddd;
+	background: red;
+		
+}
+
+
 a {
 	text-decoration: none;
 }
@@ -153,9 +161,10 @@ a {
 	</div>
 	
 	<script>
-	$(document).on('click','.nav_item', function(){
-		$(this).css({ background:"#065471" , color:"#ffc045" });
+	 $(document).on('click','.nav_item', function(){
+		$(this).toggleClass("done");;
 		});
+	
 	</script>
 </body>
 </html>
