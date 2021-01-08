@@ -13,9 +13,17 @@ import kh.spring.statics.Statics;
 
 @Service
 public class BoardService {
-
+	
 	@Autowired
 	private BoardDAO bdao;
+	
+	public int WriteBoardInsert(String writer, String title, String contents) {
+		return bdao.WriteBoardInsert(writer, title, contents);
+	}
+
+	public int writeCmt(String writer, String contents) {
+		return bdao.writeCmt(writer,contents);
+	}
 
 	public List<BoardDTO> listBoard() throws Exception {
 		return bdao.listBoard();

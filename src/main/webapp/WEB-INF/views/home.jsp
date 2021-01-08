@@ -9,6 +9,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </head>
 <body>
+
 	<button id=board>게시판</button>
 	<button id=logout>로그아웃</button>
 	
@@ -21,5 +22,9 @@
 			location.href = "/member/logout.mem";
 		});
 	</script>
+
+<a href="/board/toWrite">글쓰기</a>
+<a href="/board/toCommet">댓글</a>
+
 </body>
 </html>

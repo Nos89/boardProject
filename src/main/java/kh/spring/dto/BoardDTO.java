@@ -53,4 +53,5 @@ public class BoardDTO {
 		SimpleDateFormat sdf = new SimpleDateFormat("yy년MM월dd일");
 		return sdf.format(write_date.getTime());
 	}
+
 }
