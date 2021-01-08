@@ -30,5 +30,14 @@
 	<select id="viewBoardDetail" resultType="kh.spring.dto.BoardDTO">
 	  select * from git_board where seq=#{value}
 	</select>
-
+	
+	<!--  게시글 수정하기 -->
+	<update id="modifyBoard">
+		update git_board set title=#{title}, contents=#{contents} where seq=#{seq}
+	</update>
+	
+	<!--  게시글 삭제하기 -->
+	<delete id="deleteBoard">
+		delete from git_board where seq=#{value}
+	</delete>
 </mapper>

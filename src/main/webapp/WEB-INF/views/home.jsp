@@ -84,24 +84,24 @@
 					<form action="/member/login" method="post">
 						<div class="inputWrapper">
 							<input type="text" name="id" placeholder="아이디를 입력 해주세요."><br>
-							<input type="passwored" name="pw" placeholder="비밀번호를 입력 해주세요.">
+							<input type="password" name="pw" placeholder="비밀번호를 입력 해주세요.">
 						</div>
 						<div class="btnWrapper">
 							<input type="submit" value="로그인" class="btnLogin">
 						</div>
 					</form>
 				</div>
-				<div class="btnSignupWrapper"><button id="btn_signUp">회원가입</button></div>
-				<script>
-					$("#btn_signUp").click(function() {
-						location.href = "/member/toSignUp";
-					})
-				</script>
+				<div class="btnSignupWrapper"><button class="btnSignup">회원가입</button></div>
 			</div>
+			<script>
+				$(".btnSignup").click(function(){
+					location.href="/member/toSignUp";
+				})
+			</script>
 		</c:when>
 		<c:when test="${loginID != null }">
 			<fieldset>
-				<legend>${sessionID}님 환영합니다.</legend>
+				<legend>${loginID}님 환영합니다.</legend>
 				<div>
 					<button class="btnBoard">게시판</button>
 					<button class="btnLogout">로그아웃</button>

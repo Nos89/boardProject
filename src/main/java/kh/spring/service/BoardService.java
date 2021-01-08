@@ -26,6 +26,15 @@ public class BoardService {
 		
 		return bdao.viewBoardDetail(seq);
 	}
+	
+	public int modifyBoard(BoardDTO dto) {
+		return bdao.modifyBoard(dto);
+		
+	}
+	
+	public int deleteBoard(int seq) {
+		return bdao.deleteBoard(seq);
+	}
 
 	public int WriteBoardInsert(String writer, String title, String contents) {
 		return bdao.WriteBoardInsert(writer, title, contents);
