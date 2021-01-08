@@ -20,5 +20,10 @@
 	<insert id="writeCmt">
 		insert into git_comment values(git_comment_seq.nextval,11,#{writer},#{contents},sysdate)
 	</insert>
+	
+	<!-- 게시글 상세보기 -->
+	<select id="viewBoardDetail" resultType="kh.spring.dto.BoardDTO">
+	  select * from git_board where seq=#{value}
+	</select>
 
 </mapper>

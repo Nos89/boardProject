@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+ <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <meta charset="UTF-8">
 <title>Home</title>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
