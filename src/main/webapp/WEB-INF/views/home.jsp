@@ -95,19 +95,30 @@
 			</div>
 		</c:when>
 		<c:when test="${loginID != null }">
-				<button id=board>게시판</button>
-				<button id=logout>로그아웃</button>
+			<fieldset>
+				<legend>${sessionID}님 환영합니다.</legend>
+				<div>
+					<button class="btnBoard">게시판</button>
+					<button class="btnLogout">로그아웃</button>
+					<button class="btnSignout">회원탈퇴</button>
+					<button class="btnModifyInfo">내 정보</button>
+				</div>
+			</fieldset>
+			<script>
+				$(".btnModifyInfo").click(function(){
+					location.href="/member/myInfo";
+				})
+			</script>
 		</c:when>
 	</c:choose>
 	</div>
-
 	
 	<script>
-		$(document).on('click','#board',function(){
+		$(document).on('click','.btnBoard',function(){
 			location.href="/board/showBoard.brd?cpage=1";
 		});
 		
-		$(document).on('click','#logout',function(){
+		$(document).on('click','.btnLogout',function(){
 			location.href = "/member/logout.mem";
 		});
 	</script>
