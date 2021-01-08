@@ -12,33 +12,59 @@
 	box-sizing: border-box;
 }
 
+.btn{
+	background-color: #4cc627;
+	border : 1px solid #4cc627;
+	color : white;
+	width: 100px;
+	height: 30px;
+	outline:0;
+}
+
+.btn:hover, .btn:focus{
+	background-color: #4cc62740;
+	cursor: pointer;
+	border : 1px solid #4cc627;
+}
+
+
 div {
 	width: 800px;
 	margin: auto;
-	border: 1px solid black;
 }
 
 .header {
 	float: left;
-	text-align: center;
+	padding-left:15px;
 	width: 100%;
-	height: 5%;
+	height: 100px;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 50px;
+    color:white;
+    background-color:#4cc627;
+}
+
+.amount{
+	font-size: 15px;
 }
 
 .box1 {
-	float: left;
 	width: 100%;
-	height: 5%;
+	height: 40px;
+	line-height: 40px;
+	font-size: 18px;
 }
 
 .box2 {
 	width: 4%;
 	height: 100%;
 	float: left;
+	border-bottom: 1px solid #f2f2f2;
 }
 
 .title {
-	border: 1px solid black;
+	border-bottom: 1px solid #f2f2f2;
 	width: 61%;
 	height: 100%;
 	text-align: center;
@@ -46,6 +72,7 @@ div {
 }
 
 .writer {
+	border-bottom: 1px solid #f2f2f2;
 	float: left;
 	text-align: center;
 	width: 15%;
@@ -53,7 +80,7 @@ div {
 }
 
 .date {
-	border: 1px solid black;
+	border-bottom: 1px solid #f2f2f2;
 	float: left;
 	width: 20%;
 	height: 100%;
@@ -81,18 +108,12 @@ div {
 	border-radius: 50px;
 }
 
-.nav_item:hover{
+.nav_item:hover, .nav_item:focus {
 	color: #6f7180;
-	background-color: #149ddd;
+	background-color: #5fed34;
 }
 
-.active{
-	color: #6f7180;
-	background-color: #149ddd;
-	background: red;
-}
-
-.nav{
+.nav {
 	text-align: center;
 }
 
@@ -100,27 +121,44 @@ a {
 	text-decoration: none;
 }
 
+#anc:hover{
+	text-decoration: underline;
+}
+
+#anc{
+	color:black;
+}
+
 #footer {
-	border: 1px solid black;
 	height: 7.5%;
 	text-align: right;
 }
 
 .box3 {
 	width: 100%;
-	height: 30px;
+	height: 40px;
+	line-height: 40px;
 }
+
+.header2{
+	border: 1px solid #4cc627;
+	height: 542px;
+	box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+}
+
 </style>
 </head>
 <body>
-	<div id=container>
+
 		<div class=header2>
-			<div class=header>자유 게시판</div>
+			<div class=header>
+				자유 게시판<br><span class="amount">${amount }개의 글</span>
+			</div>
 			<div class="box1">
 				<div class=box2></div>
-				<div class=title>Title</div>
-				<div class=writer>Writer</div>
-				<div class=date>Date</div>
+				<div class=title>제목</div>
+				<div class=writer>작성자</div>
+				<div class=date>날짜</div>
 			</div>
 			<div class=main>
 
@@ -143,20 +181,17 @@ a {
 					<div class=box3>글이 없습니다.</div>
 				</c:if>
 			</div>
-
+			<div class=nav>${navi}</div>
 		</div>
-	</div>
-	<div class=nav>${navi}</div>
 	<div id=footer>
-		<button id=write>글쓰기</button>
-		<button id=back>돌아가기</button>
+		<button class=btn id=write>글쓰기</button>
+		<button class=btn id=back>돌아가기</button>
 	</div>
 	
 	<script>
-	 $(document).on('click','.nav_item', function(){
-		$(this).addClass("active");
+		$('#back').click(function(){
+			location.href="/";
 		});
-	
 	</script>
 </body>
 </html>
