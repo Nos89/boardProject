@@ -33,9 +33,10 @@ public class BoardDAO {
 		return db.insert("Board.writeInsert", param);
 	}
 
-	public int writeCmt(String writer, String contents) {
+	public int writeCmt(int board_seq,String writer, String contents) {
 		Map<String, Object> param = new HashMap<>();
 		param.put("writer",writer);
+		param.put("board_seq", board_seq);
 		param.put("contents",contents);
 		
 		return db.insert("Board.writeCmt", param);

@@ -19,6 +19,17 @@
         .cmtContentsWrapper{width: 90%; height: 60px; float:left; }
         .cmtBtnWrapper{width: 10%;  height: 60px; float:left; }
         #cmtBtn{width: 100%; height:100%;}
+         .commentsWrapper{width: 800px; height: 160px;}
+            .contents{width: 100%; height: 100px;}
+            .apply{ height: 60px;}
+            .applyBtn{float: right; height: 100%; width: 100px;}
+            .txtarea{width: 100%; height: 100%}
+            .container2{width: 800px; height: 160px; margin-top:20px; border:1px solid black;}
+            .top{height: 60px;border:1px solid black;}
+            .seq{float: left; width: 100px; height: 100%;border:1px solid black;}
+            .id{float: left; width: 200px; height: 100%;border:1px solid black;}
+            .reg_date_cmt{float: right; width: 200px; height: 100%;border:1px solid black;}
+            .contents_cmt{width: 100%; height: 100px;border:1px solid black;}
     </style>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <body>
@@ -45,16 +56,34 @@
 				</c:otherwise>
 			</c:choose>
 		</form>
-		<div class="commentsWrapper">
-			<div class="cmtContentsWrapper">
-				<textarea class="commentsContents" id="commentsContents"></textarea>
-			</div>
-			<div class="cmtBtnWrapper">
-				<input type="button" id="cmtBtn" value="글쓰기">
-			</div>
-			<div class="viewComments"></div>
-		</div>
+		<!-- 댓글 쓰는 부분 -->
+	<form action="/board/writeCmt" method=post>
+	 <div class="commentsWrapper">
+            <div class="contents"><textarea class=txtarea name=contents placeholder="댓글을 입력하세요."></textarea></div>
+            <div class="apply"><input type=submit class=applyBtn value="등록하기"></div>
+        </div>
+     </form>
+     
+     <!-- 댓글들 확인 -->
+	<!-- 게시글 SEQ == 댓 쓸때 mapper에 있는 board_seq -->
+	
+	<c:forEach var="i" items="${cmtList}">
+        <div class="container2">    
+            <div class="top">
+                <div class="seq">${i.seq}</div> <div class="id">${i.id }</div><div class=reg_date_cmt>${i.cmt_date}</div>
+            </div>
+            <div class="contents_cmt">${i.contents }</div>
+          	
+        </div>
+      </c:forEach>
 	</div>
+	<button id=backBtn>뒤로가기</button>
+	
+	<script>
+	$(document).on('click','#backBtn',function(){
+		location.href = "/board/showBoard.brd?cpage=1";
+	});
+	</script>
 
 </body>
 </html>
