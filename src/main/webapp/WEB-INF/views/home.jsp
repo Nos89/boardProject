@@ -68,7 +68,6 @@
 </style>
 </head>
 <body>
-<<<<<<< HEAD
 	<div id="mainContentsWrapper">
 	<c:choose>
 		<c:when test="${loginID == null }">
@@ -95,15 +94,26 @@
 			</div>
 		</c:when>
 		<c:when test="${loginID != null }">
-			게시판
+			<fieldset>
+				<legend>${sessionID}님 환영합니다.</legend>
+				<div>
+					<button class="btnBoard">게시판</button>
+					<button class="btnLogout">로그아웃</button>
+					<button class="btnSignout">회원탈퇴</button>
+					<button class="btnModifyInfo">내 정보</button>
+				</div>
+			</fieldset>
+			<script>
+				$(".btnModifyInfo").click(function(){
+					location.href="/member/myInfo";
+				})
+			</script>
 		</c:when>
 	</c:choose>
 	</div>
-=======
 
 <a href="/board/toWrite">글쓰기</a>
 <a href="/board/toCommet">댓글</a>
 
->>>>>>> 03101b278fed47053893d8eb81ef5325ee3f70cc
 </body>
 </html>

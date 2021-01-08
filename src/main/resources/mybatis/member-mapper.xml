@@ -5,4 +5,10 @@
 	<select id="login" resultType="Integer">
 		select count(*) from git_members where id= #{id} and pw= #{pw}
 	</select>
+	<select id="myInfo" resultType="kh.spring.dto.MemberDTO">
+		select * from git_members where id= #{value}
+	</select>
+	<update id="modify">
+		update git_members set name=#{name}, email=#{email} where id=#{id}
+	</update>
 </mapper>
