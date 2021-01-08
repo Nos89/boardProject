@@ -11,6 +11,7 @@
 <body>
 
 <a href="/board/toWrite">글쓰기</a>
+<a href="/board/toCommet">댓글</a>
 
 </body>
 </html>

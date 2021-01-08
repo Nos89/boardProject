@@ -78,15 +78,11 @@
 				</table>
 			</form>
 
-
-
-
-
 	<script>
 
         //목록으로
         document.getElementById("toIndex").onclick = function(){
-        	location.href='toBoard.board?cpage=1';
+        	location.href='home';
         }
         </script>
 

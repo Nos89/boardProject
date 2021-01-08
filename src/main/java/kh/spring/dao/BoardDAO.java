@@ -22,4 +22,12 @@ public class BoardDAO {
 		return db.insert("Board.writeInsert", param);
 	}
 
+	public int writeCmt(String writer, String contents) {
+		Map<String, Object> param = new HashMap<>();
+		param.put("writer",writer);
+		param.put("contents",contents);
+		
+		return db.insert("Board.writeCmt", param);
+	}
+
 }
