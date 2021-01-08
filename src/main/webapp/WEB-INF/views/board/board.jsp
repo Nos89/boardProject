@@ -192,6 +192,13 @@ a {
 		$('#back').click(function(){
 			location.href="/";
 		});
+	
+	$(document).on('click','#write', function(){
+		location.href="/board/toWrite";
+		});
+	$(document).on('click','#back', function(){
+		location.href="/";
+		});
 	</script>
 </body>
 </html>

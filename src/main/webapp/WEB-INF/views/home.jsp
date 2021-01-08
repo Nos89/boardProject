@@ -84,15 +84,20 @@
 					<form action="/member/login" method="post">
 						<div class="inputWrapper">
 							<input type="text" name="id" placeholder="아이디를 입력 해주세요."><br>
-							<input type="passwored" name="pw" placeholder="비밀번호를 입력 해주세요.">
+							<input type="password" name="pw" placeholder="비밀번호를 입력 해주세요.">
 						</div>
 						<div class="btnWrapper">
 							<input type="submit" value="로그인" class="btnLogin">
 						</div>
 					</form>
 				</div>
-				<div class="btnSignupWrapper"><button>회원가입</button></div>
+				<div class="btnSignupWrapper"><button class="btnSignup">회원가입</button></div>
 			</div>
+			<script>
+				$(".btnSignup").click(function(){
+					location.href="/member/toSignUp";
+				})
+			</script>
 		</c:when>
 		<c:when test="${loginID != null }">
 			<fieldset>
@@ -123,9 +128,6 @@
 		});
 	</script>
 
-<a href="/board/toWrite">글쓰기</a>
-<a href="/board/toCommet">댓글쓰기</a>
-<a href="/board/cmtView">댓글확인</a>
 
 </body>
 </html>
