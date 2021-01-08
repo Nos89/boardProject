@@ -94,7 +94,7 @@ div {
 	text-align: center;
 }
 
-.nav_item {
+.nav_item, .nav_item2{
 	display: inline-block;
 	width: 37px;
 	height: 37px;
@@ -111,6 +111,11 @@ div {
 .nav_item:hover, .nav_item:focus {
 	color: #6f7180;
 	background-color: #5fed34;
+}
+
+.nav_item2:hover, .nav_item2:focus{
+	color:white;
+	background-color: #149ddd;
 }
 
 .nav {
