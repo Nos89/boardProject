@@ -10,5 +10,7 @@
 </head>
 <body>
 
+<a href="/board/toWrite">글쓰기</a>
+
 </body>
 </html>
