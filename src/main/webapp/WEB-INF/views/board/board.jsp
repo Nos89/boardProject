@@ -138,7 +138,7 @@ a {
 							<div class=box2>${i.seq}</div>
 							<div class=title>
 								<a id=anc name=title
-									href="/board/read.brd?cpage=1&seq=${i.seq }">${i.title}</a>
+									href="/board/boardDetail?cpage=1&seq=${i.seq }">${i.title}</a>
 							</div>
 							<div class=writer>${i.writer}</div>
 							<div class=date>${i.formedDate}</div>
