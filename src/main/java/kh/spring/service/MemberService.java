@@ -20,6 +20,14 @@ public class MemberService {
 		temp.put("pw", pw);
 		return mdao.login(temp);
 	}
+
+	public MemberDTO getMyInfo( String id ) {
+		return mdao.getMyInfo(id);
+	}
+	
+	public int modifyInfo( MemberDTO dto ) {
+		return mdao.modifyInfo(dto);
+	}
 	
 	// 아이디 중복확인
 	public int isIdDuplicated(String id) {

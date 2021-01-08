@@ -8,9 +8,10 @@ public class MemberDTO {
 	private String name;
 	private String email;
 	private Date reg_date;
-	
+
 	public MemberDTO() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
 	public MemberDTO(String id, String pw, String name, String email, Date reg_date) {
 		super();

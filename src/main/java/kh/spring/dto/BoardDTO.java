@@ -3,6 +3,7 @@ package kh.spring.dto;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
 public class BoardDTO {
 	private int seq;
 	private String writer;

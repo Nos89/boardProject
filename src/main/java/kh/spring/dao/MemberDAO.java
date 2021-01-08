@@ -23,6 +23,14 @@ public class MemberDAO {
 		}
 	}
 	
+	public MemberDTO getMyInfo( String id ) {
+		return db.selectOne("Member.myInfo", id);
+	}
+	
+	public int modifyInfo( MemberDTO dto ) {
+		return db.update("Member.modify", dto);
+	}
+	
 	// 아이디 중복 체크
 	public int isIdDuplicated(String id) {
 		return db.selectOne("Member.isIdDuplicated", id);

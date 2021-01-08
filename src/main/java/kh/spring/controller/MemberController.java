@@ -43,6 +43,35 @@ public class MemberController {
 		return "home";
 	}
 	
+	@RequestMapping("myInfo")
+	public String myInfo(String type, Model model) {
+		String id = (String)session.getAttribute("loginID");
+		model.addAttribute("myInfo", mservice.getMyInfo(id));
+		try {
+			boolean flag = Boolean.parseBoolean(type);
+			if( flag ) {
+				model.addAttribute("flag", true);
+			} else {
+				model.addAttribute("flag", false);
+			}
+		} catch(Exception e) {
+			model.addAttribute("flag", false);
+		}
+		return "/myInfo";
+	}
+	
+	@RequestMapping("modify")
+	public String modifyInfo( MemberDTO dto, Model model ) {
+		dto.setId((String)session.getAttribute("loginID"));
+		int result = mservice.modifyInfo(dto);
+		if( result > 0 ) {
+			model.addAttribute("result", true);
+		} else {
+			model.addAttribute("result", false);
+		}
+		return "/myInfo";
+	}
+
 	// 회원가입 페이지로 이동
 	@RequestMapping("toSignUp")
 	public String toSignUp() {
@@ -69,5 +98,4 @@ public class MemberController {
 		model.addAttribute("signUp", result);
 		return "/member/signUpResult";
 	}
-	
 }

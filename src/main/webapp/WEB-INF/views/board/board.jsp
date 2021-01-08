@@ -130,7 +130,7 @@ a {
 							<div class=box2>${i.seq}</div>
 							<div class=title>
 								<a id=anc name=title
-									href="/board/read.brd?cpage=1&seq=${i.seq }">${i.title}</a>
+									href="/board/boardDetail?cpage=1&seq=${i.seq }">${i.title}</a>
 							</div>
 							<div class=writer>${i.writer}</div>
 							<div class=date>${i.formedDate}</div>
@@ -155,6 +155,13 @@ a {
 	<script>
 	$(document).on('click','.nav_item', function(){
 		$(this).css({ background:"#065471" , color:"#ffc045" });
+		});
+	
+	$(document).on('click','#write', function(){
+		location.href="/board/toWrite";
+		});
+	$(document).on('click','#back', function(){
+		location.href="/";
 		});
 	</script>
 </body>
