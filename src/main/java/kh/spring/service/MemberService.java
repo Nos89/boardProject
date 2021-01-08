@@ -38,4 +38,9 @@ public class MemberService {
 	public int signUp(MemberDTO dto) {
 		return mdao.signUp(dto);
 	}
+	
+	// 회원탈퇴
+	public int signOut(String id, String pw) {
+		return mdao.signOut(id,pw);
+	}
 }

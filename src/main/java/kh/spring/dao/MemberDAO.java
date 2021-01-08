@@ -1,5 +1,6 @@
 package kh.spring.dao;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
@@ -39,5 +40,13 @@ public class MemberDAO {
 	// 회원가입
 	public int signUp(MemberDTO dto) {
 		return db.insert("Member.signUp",dto);
+	}
+	
+	// 회원탈퇴
+	public int signOut(String id, String pw) {
+		Map<String, String> map = new HashMap<>();
+		map.put("id", id);
+		map.put("pw", pw);
+		return db.delete("Member.signOut",map);
 	}
 }

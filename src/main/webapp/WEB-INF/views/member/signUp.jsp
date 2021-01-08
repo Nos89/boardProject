@@ -29,11 +29,12 @@
         div[class^="row_"]:last-child{float: left;}
         div[class^="row_"] input{
             width: 120px;
-            height: 20px;
+            height: 25px;
+            border:1px solid gray;
             border-radius: 5px;
+            padding-left: 3px;
         }
         #email{width: 200px;}
-        
         .button{margin: 10px 0px;}
         button[id^="btn_"]:not(#btn_duplChk){
             width: 100px;
@@ -41,6 +42,10 @@
             border-radius: 30px;
         }
         #btn_signup{margin-left: 98px;}
+        button:hover{
+            cursor: pointer;
+            background-color:gainsboro;
+        }
     </style>
 </head>
 <body>

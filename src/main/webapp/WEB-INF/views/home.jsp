@@ -91,7 +91,12 @@
 						</div>
 					</form>
 				</div>
-				<div class="btnSignupWrapper"><button>회원가입</button></div>
+				<div class="btnSignupWrapper"><button id="btn_signUp">회원가입</button></div>
+				<script>
+					$("#btn_signUp").click(function() {
+						location.href = "/member/toSignUp";
+					})
+				</script>
 			</div>
 		</c:when>
 		<c:when test="${loginID != null }">

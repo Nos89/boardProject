@@ -98,4 +98,19 @@ public class MemberController {
 		model.addAttribute("signUp", result);
 		return "/member/signUpResult";
 	}
+	
+	// 회원탈퇴 페이지로 이동
+	@RequestMapping("toSignOut")
+	public String toSignOut() {
+		return "/member/signOut";
+	}
+	
+	// 회원탈퇴
+	@RequestMapping("signOut")
+	public String signOut(String pw, Model model) throws Exception {
+		String id = (String)session.getAttribute("loginID");
+		int result = mservice.signOut(id,EncryptUtils.getSHA256(pw));
+		model.addAttribute("signOut", result);
+		return "/member/signOutResult";
+	}
 }
