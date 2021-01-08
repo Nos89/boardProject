@@ -5,4 +5,11 @@
 	<select id="login" resultType="Integer">
 		select count(*) from git_members where id= #{id} and pw= #{pw}
 	</select>
+	
+	<select id="isIdDuplicated" resultType="Integer">
+		select count(*) from git_members where id=#{id}
+	</select>
+	<insert id="signUp">
+		insert into git_members values(#{id}, #{pw}, #{name}, #{email}, sysdate)
+	</insert>
 </mapper>
