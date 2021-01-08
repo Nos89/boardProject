@@ -30,4 +30,14 @@ public class MemberDAO {
 	public int modifyInfo( MemberDTO dto ) {
 		return db.update("Member.modify", dto);
 	}
+	
+	// 아이디 중복 체크
+	public int isIdDuplicated(String id) {
+		return db.selectOne("Member.isIdDuplicated", id);
+	}
+	
+	// 회원가입
+	public int signUp(MemberDTO dto) {
+		return db.insert("Member.signUp",dto);
+	}
 }
