@@ -109,12 +109,22 @@ public class BoardController {
 		return "/board/boardDetail";
 	}
 	
-	//글 수 정하기
+	//글 수 정하기 페이지로 이동
 	@RequestMapping("/modifyBoard")
-	public String modifyBoard(Model model, HttpServletRequest req) {
+	public String modifyBoard(Model model, HttpServletRequest req, BoardDTO dto) {
+		System.out.println(dto.getSeq() +":" + dto.getWriter()+":"+ dto.getContents());
+		model.addAttribute("dto", dto);
 		
+		return "/board/boardModify";
+	}
+	
+	//글 수정하기 작업
+	@RequestMapping("/modifyBoardProc")
+	public String modifyBoardProc(Model model, BoardDTO dto) {
+		int result = bservice.modifyBoard(dto);
+		model.addAttribute("result", result);
 		
-		return "/board/modifyView";
+		return "/board/modifyBoardProcView";
 	}
 
 }

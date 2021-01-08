@@ -18,17 +18,18 @@
         textarea{width: 100%; height: 100%;}
         .cmtContentsWrapper{width: 90%; height: 60px; float:left; }
         .cmtBtnWrapper{width: 10%;  height: 60px; float:left; }
+        
         #cmtBtn{width: 100%; height:100%;}
     </style>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <body>
 	<div class="mainContentsWrapper">
 		<form action="/board/modifyBoard" method="post">
-			<div class="title" name="title">${dto.title }</div>
-			<div class="writer" name="writer">${dto.writer }</div>
-			<div class="reg_date" name="write_date">${dto.write_date }</div>
+			<div class="title" name="title"><input type="text" name="title" value="${dto.title }" readonly></div>
+			<div class="writer" name="writer"><input type="text" name="writer" value="${dto.writer }" readonly></div>
+			<div class="reg_date" name="write_date"><input type="text" name="write_date" value="${dto.write_date }" readonly></div>
 			<div class="contents">
-				<textarea style="resize: none;" id="textarea" name="textarea"
+				<textarea style="resize: none;" id="textarea" name="contents"
 					readonly>${dto.contents }</textarea>
 			</div>
 			<c:choose>
@@ -57,4 +58,7 @@
 	</div>
 
 </body>
+<script>
+
+</script>
 </html>

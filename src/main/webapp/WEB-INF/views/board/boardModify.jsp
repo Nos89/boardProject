@@ -57,31 +57,32 @@
 <!-- 게시판 글쓰는 곳 -->
 <body>
 			<!-- 그냥 글쓰기  -->
-			<form action="/board/write.board" method=post>
+			<form action="/board/modifyBoardProc" method=post>
 				<table border=1 class=board>
 					<tr class=top>
 						<th colspan=5>글 수정</th>
 					</tr>
 					<tr class=title>
 						<td><input type=text class=text name=title
-							placeholder="제목을 입력하세요" required></td>
+							value="${dto.title }"></td>
 					</tr>
 					<tr class=center>
 						<td colspan=5><textarea type=text name=contents
-								class=contents placeholder="내용을 입력하세요." required></textarea></td>
+								class=contents >${dto.contents }</textarea></td>
 					</tr>
 					<tr class=bottom>
 						<td colspan=5><input type=button value=목록으로 id=toIndex>
-							<input type=submit value="글 수정" id=writeBtn></td>
+							<input type=submit value="글 수정" id=modifyBtn></td>
 					</tr>
 				</table>
+				<input type="hidden" value="${dto.seq }" name="seq">
 			</form>
 
 	<script>
 
         //목록으로
         document.getElementById("toIndex").onclick = function(){
-        	location.href='home';
+        	location.href='/';
         }
         </script>
 

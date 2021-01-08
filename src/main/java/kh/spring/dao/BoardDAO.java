@@ -50,6 +50,11 @@ public class BoardDAO {
 	public BoardDTO viewBoardDetail(int seq){
 		return db.selectOne("Board.viewBoardDetail",seq);
 	}
+	
+	public int modifyBoard(BoardDTO dto) {
+		return db.update("Board.modifyBoard", dto);
+	}
+	
 	public List<BoardDTO> listBoard() throws Exception {
 		return db.selectList("Board.listBoard");
 	}
