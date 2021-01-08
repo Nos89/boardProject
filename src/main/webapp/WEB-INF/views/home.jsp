@@ -9,6 +9,17 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </head>
 <body>
-
+	<button id=board>게시판</button>
+	<button id=logout>로그아웃</button>
+	
+	<script>
+		$(document).on('click','#board',function(){
+			location.href="/board/showBoard.brd?cpage=1";
+		});
+		
+		$(document).on('click','#logout',function(){
+			location.href = "/member/logout.mem";
+		});
+	</script>
 </body>
 </html>
