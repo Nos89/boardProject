@@ -68,7 +68,6 @@
 </style>
 </head>
 <body>
-<<<<<<< HEAD
 	<div id="mainContentsWrapper">
 	<c:choose>
 		<c:when test="${loginID == null }">
@@ -95,15 +94,25 @@
 			</div>
 		</c:when>
 		<c:when test="${loginID != null }">
-			게시판
+				<button id=board>게시판</button>
+				<button id=logout>로그아웃</button>
 		</c:when>
 	</c:choose>
 	</div>
-=======
+
+	
+	<script>
+		$(document).on('click','#board',function(){
+			location.href="/board/showBoard.brd?cpage=1";
+		});
+		
+		$(document).on('click','#logout',function(){
+			location.href = "/member/logout.mem";
+		});
+	</script>
 
 <a href="/board/toWrite">글쓰기</a>
 <a href="/board/toCommet">댓글</a>
 
->>>>>>> 03101b278fed47053893d8eb81ef5325ee3f70cc
 </body>
 </html>

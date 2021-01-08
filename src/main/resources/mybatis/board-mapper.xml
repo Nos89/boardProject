@@ -3,6 +3,14 @@
 <mapper namespace="Board">
 	<!-- git_board -->
 	
+	<select id="listByCpage" resultType="kh.spring.dto.BoardDTO">
+		select * from (select git_board.*,row_number() over(order by seq desc) rn from git_board) where rn between #{startRowNum} and #{endRowNum}
+	</select>
+	
+	<select id="listBoard" resultType="kh.spring.dto.BoardDTO">
+		select * from git_board order by seq desc
+	</select>
+	
 	<!-- 글쓰기 등록 ->디비에 insert로 저장 -->
 	<insert id="writeInsert">
 		insert into git_board values(git_board_seq.nextval,#{writer},#{title},#{contents},sysdate)
@@ -12,4 +20,5 @@
 	<insert id="writeCmt">
 		insert into git_comment values(git_comment_seq.nextval,11,#{writer},#{contents},sysdate)
 	</insert>
+
 </mapper>

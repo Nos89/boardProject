@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
+
 	
 	@Autowired
 	HttpSession session;
-	
+
 	@RequestMapping("/")
 	public String home() {
-		
-		return "home";
+		return "";
 	}
 }
