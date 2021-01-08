@@ -10,9 +10,9 @@
     <style>
         *{box-sizing: border-box; }
         .mainContentsWrapper{width: 800px; margin:auto; border: 1px solid black;}
-        .title{width: 60%; height: 30px; border: 1px solid black; float:left}
+        .title{width: 50%; height: 30px; border: 1px solid black; float:left}
         .writer{width: 20%; height: 30px; float:left; border:1px solid black;}
-        .reg_date{width: 20%; height: 30px; float:left; border:1px solid black;}
+        .reg_date{width: 30%; height: 30px; float:left; border:1px solid black;}
         .contents{height:500px;}
         .btnWrapper{text-align: right;}
         textarea{width: 100%; height: 100%;}
