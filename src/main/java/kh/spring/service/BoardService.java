@@ -15,4 +15,8 @@ public class BoardService {
 		return bdao.WriteBoardInsert(writer, title, contents);
 	}
 
+	public int writeCmt(String writer, String contents) {
+		return bdao.writeCmt(writer,contents);
+	}
+
 }

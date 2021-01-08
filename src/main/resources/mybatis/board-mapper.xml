@@ -7,4 +7,9 @@
 	<insert id="writeInsert">
 		insert into git_board values(git_board_seq.nextval,#{writer},#{title},#{contents},sysdate)
 	</insert>
+	
+	<!-- 댓글 등록 -->
+	<insert id="writeCmt">
+		insert into git_comment values(git_comment_seq.nextval,11,#{writer},#{contents},sysdate)
+	</insert>
 </mapper>
