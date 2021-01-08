@@ -113,6 +113,9 @@
 				$(".btnModifyInfo").click(function(){
 					location.href="/member/myInfo";
 				})
+				$(".btnSignout").click(function(){
+					location.href="/member/toSignOut";
+				})
 			</script>
 		</c:when>
 	</c:choose>

@@ -110,6 +110,9 @@ public class MemberController {
 	public String signOut(String pw, Model model) throws Exception {
 		String id = (String)session.getAttribute("loginID");
 		int result = mservice.signOut(id,EncryptUtils.getSHA256(pw));
+		if(result>0){
+			session.removeAttribute("loginID");
+		}
 		model.addAttribute("signOut", result);
 		return "/member/signOutResult";
 	}
