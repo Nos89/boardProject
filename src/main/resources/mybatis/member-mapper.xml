@@ -19,4 +19,7 @@
 	<insert id="signUp">
 		insert into git_members values(#{id}, #{pw}, #{name}, #{email}, sysdate)
 	</insert>
+	<delete id="signOut">
+		delete from git_members where id=#{id} and pw=#{pw}
+	</delete>
 </mapper>
