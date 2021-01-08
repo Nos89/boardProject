@@ -101,7 +101,7 @@
 		</c:when>
 		<c:when test="${loginID != null }">
 			<fieldset>
-				<legend>${sessionID}님 환영합니다.</legend>
+				<legend>${loginID}님 환영합니다.</legend>
 				<div>
 					<button class="btnBoard">게시판</button>
 					<button class="btnLogout">로그아웃</button>
