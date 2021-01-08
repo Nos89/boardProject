@@ -55,6 +55,10 @@ public class BoardDAO {
 		return db.update("Board.modifyBoard", dto);
 	}
 	
+	
+	public int deleteBoard(int seq) {
+		return db.delete("Board.deleteBoard", seq);
+	}
 	public List<BoardDTO> listBoard() throws Exception {
 		return db.selectList("Board.listBoard");
 	}

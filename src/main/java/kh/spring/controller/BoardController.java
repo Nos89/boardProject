@@ -126,5 +126,12 @@ public class BoardController {
 		
 		return "/board/modifyBoardProcView";
 	}
-
+	
+	//글 삭제
+	@RequestMapping("/deleteBoard")
+	public String deleteBoard(Model model, HttpServletRequest req) {
+		int result = bservice.deleteBoard(Integer.parseInt(req.getParameter("seq")));
+		model.addAttribute("result", result);
+		return "/board/deleteBoardProcView";
+	}
 }

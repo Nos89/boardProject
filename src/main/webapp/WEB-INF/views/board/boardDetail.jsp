@@ -35,13 +35,13 @@
 			<c:choose>
 				<c:when test="${dto.writer == loginId }">
 					<div class="btnWrapper">
-						<input type="hidden" name="seq" value="${dto.seq }"><input type="submit" id="modify" value="수정"> <input type="button"
-							id="delBtn" value="삭제">
+						<input type="hidden" id="seq" name="seq" value="${dto.seq }"><input type="submit" id="modify" value="수정"> <input type="button"
+							id="delBtn" value="삭제"> <input type="button"  id="backBtn" value="전체목록으로">
 					</div>
 				</c:when>
 				<c:otherwise>
 					<div class="btnWrapper">
-						<input type="button" value="목록으로">
+						<input type="button" id="backBtn" value="전체목록으로">
 					</div>
 				</c:otherwise>
 			</c:choose>
@@ -59,6 +59,18 @@
 
 </body>
 <script>
-
+$(document).on('click','#delBtn', function(){
+	let result = confirm("삭제하시겠습니까?");
+	if(result){
+		let seq = $('#seq').val();
+		location.href="/board/deleteBoard?seq="+seq+"";
+	}else{
+	}
+	
+	});
+	
+$(document).on('click','#backBtn',function(){
+	location.href="/board/showBoard.brd?cpage=1";
+})
 </script>
 </html>
