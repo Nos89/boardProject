@@ -68,6 +68,7 @@
 </style>
 </head>
 <body>
+<<<<<<< HEAD
 	<div id="mainContentsWrapper">
 	<c:choose>
 		<c:when test="${loginID == null }">
@@ -98,5 +99,11 @@
 		</c:when>
 	</c:choose>
 	</div>
+=======
+
+<a href="/board/toWrite">글쓰기</a>
+<a href="/board/toCommet">댓글</a>
+
+>>>>>>> 03101b278fed47053893d8eb81ef5325ee3f70cc
 </body>
 </html>
