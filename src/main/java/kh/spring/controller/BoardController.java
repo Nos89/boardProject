@@ -1,18 +1,16 @@
 package kh.spring.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import kh.spring.dto.BoardDTO;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import kh.spring.dto.BoardDTO;
 import kh.spring.dto.CommentDTO;
 import kh.spring.service.BoardService;
 
@@ -52,7 +50,7 @@ public class BoardController {
 
 		try {
 			int result = bservice.WriteBoardInsert(writer, title, contents);
-			return "home";
+			return "redirect:/board/showBoard.brd?cpage=1";
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
