@@ -96,14 +96,6 @@ div {
 	text-align: center;
 }
 
-.done{
-		color: #6f7180;
-	background-color: #149ddd;
-	background: red;
-		
-}
-
-
 a {
 	text-decoration: none;
 }
@@ -162,7 +154,7 @@ a {
 	
 	<script>
 	 $(document).on('click','.nav_item', function(){
-		$(this).toggleClass("done");;
+		$(this).addClass("active");
 		});
 	
 	</script>
