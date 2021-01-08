@@ -23,7 +23,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <body>
 	<div class="mainContentsWrapper">
-		<form>
+		<form action="/board/modifyBoard" method="post">
 			<div class="title" name="title">${dto.title }</div>
 			<div class="writer" name="writer">${dto.writer }</div>
 			<div class="reg_date" name="write_date">${dto.write_date }</div>
@@ -34,8 +34,8 @@
 			<c:choose>
 				<c:when test="${dto.writer == loginId }">
 					<div class="btnWrapper">
-						<input type="button" value="수정"> <input type="submit"
-							value="삭제">
+						<input type="hidden" name="seq" value="${dto.seq }"><input type="submit" id="modify" value="수정"> <input type="button"
+							id="delBtn" value="삭제">
 					</div>
 				</c:when>
 				<c:otherwise>

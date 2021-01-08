@@ -94,5 +94,13 @@ public class BoardController {
 		model.addAttribute("loginId", loginId);
 		return "/board/boardDetail";
 	}
+	
+	//글 수 정하기
+	@RequestMapping("/modifyBoard")
+	public String modifyBoard(Model model, HttpServletRequest req) {
+		
+		
+		return "/board/modifyView";
+	}
 
 }
